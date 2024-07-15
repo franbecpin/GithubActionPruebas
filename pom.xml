@@ -9,9 +9,9 @@
   <name>CubeGenerator</name>  
   <url>http://maven.apache.org</url>  
   
-   <dependency>
+  <dependencies>
         
-   </dependency>
+   </dependencies>
   
   <properties>
    <maven.compiler.source>16</maven.compiler.source>
