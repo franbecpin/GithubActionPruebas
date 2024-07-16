@@ -22,4 +22,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - run: echo "JDK asignada"    
+      - run: echo "JDK asignada"   
+      - name: Build with Maven
+      - run: mvn -B package --file pom.xml
+      - run: echo "MAVEN lanzado"
