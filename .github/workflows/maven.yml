@@ -30,4 +30,8 @@ jobs:
         #mvn help:effective-pom
         #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Package
+          path: staging
       
