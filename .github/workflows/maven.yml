@@ -25,14 +25,11 @@ jobs:
       - run: echo "JDK asignada"   
       - name: Build with Maven
         run: mvn -B package --file pom.xml
-        #mvn clean package        
-        #mvn compile
-        #mvn help:effective-pom
-        #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
       - name: Archive bundle
         uses: actions/upload-artifact@v2
         with:
           name: bundle
           path: target
+      - run: echo "Artefacto creado"      
       
