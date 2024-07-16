@@ -31,7 +31,7 @@ jobs:
         #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
       - name: Archive bundle
-      - uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: bundle
           path: target
