@@ -29,11 +29,7 @@ jobs:
         #mvn help:effective-pom
         #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
-      - run: mkdir staging && mv target/yb-workload-sim.jar target/yb-workload-sim-${{ env.build-number }}.jar && cp target/*.jar staging
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Package
-          path: staging
-          retention-days: 1
+      - name: Upload jar
+        run: mkdir staging && cp target/sumpdata-*.jar staging
       - run: echo "Generado package"    
       
