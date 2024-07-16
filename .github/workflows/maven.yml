@@ -29,7 +29,4 @@ jobs:
         #mvn help:effective-pom
         #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
-      - name: Upload jar
-        run: mkdir target
-      - run: echo "Generado package"    
       
