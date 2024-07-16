@@ -32,7 +32,7 @@ jobs:
       - run: echo "MAVEN lanzado"
       - name: Archive bundle
       - uses: actions/upload-artifact@v2
-          with:
+        with:
           name: bundle
           path: target
       
