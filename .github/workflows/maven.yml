@@ -31,5 +31,6 @@ jobs:
         with:
           name: bundle
           path: target
-      - run: echo "Artefacto creado"      
+      - run: echo "Artefacto creado"     
+      #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
       
