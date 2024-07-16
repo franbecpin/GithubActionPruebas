@@ -30,6 +30,6 @@ jobs:
         #mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
       - name: Upload jar
-        run: mkdir staging && cp target/sumpdata-*.jar staging
+        run: mkdir target
       - run: echo "Generado package"    
       
