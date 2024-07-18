@@ -39,8 +39,8 @@ jobs:
         id: download-artifact      
         with:         
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: maven.yml
-          workflow_conclusion: success
+          #workflow: maven.yml
+          #workflow_conclusion: success
           name: bundle  
           path: target
       - run: echo "Artefacto creado"    
