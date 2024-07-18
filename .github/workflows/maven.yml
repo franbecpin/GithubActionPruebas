@@ -35,7 +35,7 @@ jobs:
       #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
       # Esto para la descarga pero hace falta un token
       - name: Permisos
-        run: chmod 777 /c/Users/francisco.becerra/pruebaGit
+        run: chmod 777 C:/Users/francisco.becerra/Desktop/DESARROLLO/PruebasGitHub/GithubActionPruebas/target/
       - name: Descargar
         uses: dawidd6/action-download-artifact@v2
         id: download-artifact      
@@ -44,7 +44,8 @@ jobs:
           #workflow: maven.yml
           #workflow_conclusion: success
           name: bundle  
-          path: /c/Users/francisco.becerra/pruebaGit/
+          path : C:/Users/francisco.becerra/Desktop/DESARROLLO/PruebasGitHub/GithubActionPruebas/target/
+          #path: /c/Users/francisco.becerra/pruebaGit/
       - run: echo "Artefacto creado"    
       #- name: Ver artifact   
        # run: ls -R /target
