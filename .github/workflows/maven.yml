@@ -33,9 +33,11 @@ jobs:
           path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
       - run: echo "Artefacto creado"     
       #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
+      # Esto para la descarga pero hace falta un token
       - name: Descargar
         uses: dawidd6/action-download-artifact@v2
         with:
+          github_token: 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
           id: download-artifact
           workflow_conclusion: success
           name: artifactjar  
