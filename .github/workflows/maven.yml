@@ -34,15 +34,16 @@ jobs:
 
   
   jobs_2:
-       name: Crear Artefact
-       runs-on: ubuntu-latest
-       steps:
-         - name: Archive bundle
-           uses: actions/upload-artifact@v2
-           with:
-             name: bundle
-             path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
-         - run: echo "Artefacto creado" 
+    needs: jobs_1
+    name: Crear Artefact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archive bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: bundle
+          path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
+      - run: echo "Artefacto creado" 
      
      
   
