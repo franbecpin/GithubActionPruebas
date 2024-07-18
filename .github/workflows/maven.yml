@@ -32,12 +32,7 @@ jobs:
           run: mvn -B package --file ${{ github.workspace }}/pom.xml
         - run: echo "MAVEN lanzado"
   
-    jobs_2:
-      needs: jobs_1 #Dependencia del jobs anterior
-      name: Crear Artefact
-      runs-on: ubuntu-latest
-      steps:
-        - name: Archive bundle
+        - name: Crear Artefact
           uses: actions/upload-artifact@v2
           with:
             name: bundle
