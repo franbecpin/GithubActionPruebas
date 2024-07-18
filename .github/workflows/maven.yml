@@ -33,4 +33,12 @@ jobs:
           path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
       - run: echo "Artefacto creado"     
       #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
-      
+      - name: Descargar
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          id: download-artifact
+          workflow_conclusion: success
+          name: artifactjar  
+          path: tmp/artifact
+      - name: Ver artifact   
+        run: ls -R /tmp/artifact
