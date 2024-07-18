@@ -1,8 +1,9 @@
-name: GitHub Actions Demo
+caname: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  jobs_1:
+    name: Elementos del sistema
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -16,33 +17,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - run: echo "JDK asignada"    
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-      - run: echo "MAVEN lanzado"
-      - name: Archive bundle
-        uses: actions/upload-artifact@v2
-        with:
-          name: bundle
-          path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
-      - run: echo "Artefacto creado"     
-      #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
-      # Esto para la descarga pero hace falta un token
-      - name: Descargar
-        uses: dawidd6/action-download-artifact@v2
-        id: download-artifact      
-        with:         
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          #workflow: maven.yml
-          #workflow_conclusion: success
-          name: bundle  
-          path: target
-      - run: echo "Artefacto creado"    
-      #- name: Ver artifact   
-       # run: ls -R /target
+  
