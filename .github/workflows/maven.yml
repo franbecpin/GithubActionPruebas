@@ -19,12 +19,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  
-  jobs_2:
-    needs: jobs_1 #Dependencia del jobs anterior
-    name: Asigna JDK
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Set up JDK 17       
         uses: actions/setup-java@v3
         with:
@@ -32,9 +27,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - run: echo "JDK asignada"
-    
-  jobs_3:
-    needs: [jobs_1, jobs_2] #Dependencia del jobs anterior
+  
+  jobs_2:
+    needs: jobs_1 #Dependencia del jobs anterior
     name: Ejecutar Maven
     runs-on: ubuntu-latest
     steps:  
@@ -42,8 +37,8 @@ jobs:
         run: mvn -B package --file pom.xml
       - run: echo "MAVEN lanzado"
   
-  jobs_4:
-    needs: [jobs_1, jobs_2, jobs_3] #Dependencia del jobs anterior
+  jobs_3:
+    needs: [jobs_1, jobs_2] #Dependencia del jobs anterior
     name: Crear Artefact
     runs-on: ubuntu-latest
     steps:
