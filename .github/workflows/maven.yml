@@ -41,7 +41,7 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: bundle
-            path: ${{ github.workspace }}/target #Path de los ficheros de recursos manualmente que serin incluidos en el zip
+            path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
         - run: echo "Artefacto creado" 
      
      
