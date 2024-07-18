@@ -45,4 +45,4 @@ jobs:
           path: target
       - run: echo "Artefacto creado"    
       - name: Ver artifact   
-        run: ls -R /tmp/artifact
+        run: ls -R /target/artifact
