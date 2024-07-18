@@ -34,12 +34,7 @@ jobs:
       - run: echo "Artefacto creado"     
       #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
       # Esto para la descarga pero hace falta un token
-      - name: Permisos
-        run: cd C:\\Users\\francisco.becerra\\Desktop\\DESARROLLO\\PruebasGitHub\\GithubActionPruebas\\target
-      - name: directorio  
-        run: ls
-        #run: chmod 777 C:/Users/francisco.becerra/Desktop/DESARROLLO/PruebasGitHub/GithubActionPruebas/target/
-      - name: Descargar
+     - name: Descargar
         uses: dawidd6/action-download-artifact@v2
         id: download-artifact      
         with:         
@@ -47,8 +42,7 @@ jobs:
           #workflow: maven.yml
           #workflow_conclusion: success
           name: bundle  
-          path : C:/Users/francisco.becerra/Desktop/DESARROLLO/PruebasGitHub/GithubActionPruebas/target/
-          #path: /c/Users/francisco.becerra/pruebaGit/
+          path: /target/
       - run: echo "Artefacto creado"    
       #- name: Ver artifact   
        # run: ls -R /target
