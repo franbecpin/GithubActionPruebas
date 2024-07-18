@@ -42,7 +42,7 @@ jobs:
           #workflow: maven.yml
           #workflow_conclusion: success
           name: bundle  
-          path: C:\
+          path: C:/TEMP
       - run: echo "Artefacto creado"    
       #- name: Ver artifact   
        # run: ls -R /target
