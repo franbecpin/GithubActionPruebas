@@ -57,7 +57,7 @@ jobs:
       needs: [jobs_1, jobs_2] #Dependencia  
       name: Descarga
       runs-on: ubuntu-latest
-      if: | 
+      if: | #Esperar que se genere el artefact
           always() &&  (needs.jobs_2.result == 'success')
       steps:
         - name: Check out repository code
@@ -74,7 +74,10 @@ jobs:
               #workflow: maven.yml
               #workflow_conclusion: success
               name: bundle  
-              path: target
+              repository: /target
+              #path: target
         - run: echo "Descarga realizada"  
 
-      
+# Ejemplos
+# https://stackoverflow.com/questions/68945610/how-to-put-conditional-job-in-need-of-another-job-in-github-action
+# https://github.com/actions/download-artifact/blob/main/README.md#v4---whats-new
