@@ -10,8 +10,7 @@ jobs:
         - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
         - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       
-    jobs_1:    
-      needs: jobs_0 #Dependencia  
+    jobs_1:         
       name: Chequear repositorio
       runs-on: ubuntu-latest
       steps:
@@ -38,11 +37,15 @@ jobs:
         - run: echo "MAVEN lanzado"
     
     jobs_2:
-      needs: [jobs_0, jobs_1] #Dependencia  
+      needs: jobs_1 #Dependencia  
       name: Artefacto
       runs-on: ubuntu-latest
       steps:
-        
+        - name: Check out repository code
+          uses: actions/checkout@v4
+        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+        #Si no hacemos checkout antes de la operación no accede correctamente al repositorio
         - name: Crear Artefact
           uses: actions/upload-artifact@v2
           with:
@@ -50,5 +53,24 @@ jobs:
             path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
         - run: echo "Artefacto creado" 
      
-     
-  
+    jobs_3:
+      needs: [jobs_1, jobs_2] #Dependencia  
+      name: Descarga
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository code
+          uses: actions/checkout@v4
+        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+        #Si no hacemos checkout antes de la operación no accede correctamente al repositorio
+        
+        - name: Descargar
+          uses: dawidd6/action-download-artifact@v2
+          id: download-artifact      
+          with:         
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              #workflow: maven.yml
+              #workflow_conclusion: success
+              name: bundleArtifac  
+              path: target
+        - run: echo "Descarga realizada"  
