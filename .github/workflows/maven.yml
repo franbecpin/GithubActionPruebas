@@ -34,6 +34,8 @@ jobs:
       - run: echo "Artefacto creado"     
       #java -cp CubeGenerator-1.0-SNAPSHOT.jar com.mycompany.App
       # Esto para la descarga pero hace falta un token
+      - name: Permisos
+        run: chown 777 /c/Users/francisco.becerra/pruebaGit/
       - name: Descargar
         uses: dawidd6/action-download-artifact@v2
         id: download-artifact      
