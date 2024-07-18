@@ -41,8 +41,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: maven.yml
           workflow_conclusion: success
-          name: artifactjar  
-          path: target/artifact
+          name: bundle  
+          path: target/bundle
       - run: echo "Artefacto creado"    
       - name: Ver artifact   
         run: ls -R /tmp/artifact
