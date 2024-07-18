@@ -42,7 +42,7 @@ jobs:
           #workflow: maven.yml
           #workflow_conclusion: success
           name: bundle  
-          path: /c/Users/francisco.becerra/prueba
+          path: /c/Users/francisco.becerra/pruebaGit
       - run: echo "Artefacto creado"    
       #- name: Ver artifact   
        # run: ls -R /target
