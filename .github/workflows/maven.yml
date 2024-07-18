@@ -17,4 +17,17 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  jobs_2:
+    name: Información JDK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17       
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - run: echo "JDK asignada"  
+     
   
