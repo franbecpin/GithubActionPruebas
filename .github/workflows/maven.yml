@@ -35,6 +35,14 @@ jobs:
         - name: Ejecutar Maven
           run: mvn -B package --file ${{ github.workspace }}/pom.xml
         - run: echo "MAVEN lanzado"
+
+        - name: Crear Artefact
+          uses: actions/upload-artifact@v2
+          with:
+            name: bundle
+            path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip           
+            #path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
+        - run: echo "Artefacto creado" 
     
     jobs_2:
       needs: jobs_1 #Dependencia  
@@ -49,7 +57,7 @@ jobs:
         - name: Crear Artefact
           uses: actions/upload-artifact@v2
           with:
-            name: bundle
+            name: bundle2
             path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip           
             #path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
         - run: echo "Artefacto creado" 
