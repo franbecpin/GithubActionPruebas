@@ -36,7 +36,16 @@ jobs:
         - name: Ejecutar Maven
           run: mvn -B package --file ${{ github.workspace }}/pom.xml
         - run: echo "MAVEN lanzado"
-  
+    
+    jobs_2:
+      needs: [jobs_0, jobs_1] #Dependencia  
+      name: Artefacto
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository code
+          uses: actions/checkout@v4
+        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        - run: echo "🖥️ The workflow is now ready to test your code on the runner."
         - name: Crear Artefact
           uses: actions/upload-artifact@v2
           with:
