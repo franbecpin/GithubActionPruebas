@@ -28,6 +28,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - run: echo "JDK asignada"  
+      - run: echo "JDK asignada"
+      - run: |
+          ls ${{ github.workspace }}
      
   
