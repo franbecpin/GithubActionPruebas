@@ -74,10 +74,12 @@ jobs:
               #workflow: maven.yml
               #workflow_conclusion: success
               name: bundle  
-              path: ${{ github.repository }}/targetArt
-              #path: target
+              #path: ${{ github.repository }}/targetArt
+              path: target
         - run: echo "Descarga realizada"  
 
+# Actions
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 # Ejemplos
 # https://stackoverflow.com/questions/68945610/how-to-put-conditional-job-in-need-of-another-job-in-github-action
 # https://github.com/actions/download-artifact/blob/main/README.md#v4---whats-new
