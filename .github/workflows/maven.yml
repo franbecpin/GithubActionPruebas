@@ -37,10 +37,8 @@ jobs:
       - name: Descargar
         uses: dawidd6/action-download-artifact@v2
         id: download-artifact      
-        with:
-          user_name: franbecpin@gmail.com
-          password: gitIceman72
-          github_token: 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
+        with:         
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: maven.yml
           workflow_conclusion: success
           name: artifactjar  
