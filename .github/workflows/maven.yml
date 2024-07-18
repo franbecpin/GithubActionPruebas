@@ -36,9 +36,10 @@ jobs:
       # Esto para la descarga pero hace falta un token
       - name: Descargar
         uses: dawidd6/action-download-artifact@v2
+        id: download-artifact
         with:
           github_token: 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
-          id: download-artifact
+          workflow: maven.yml
           workflow_conclusion: success
           name: artifactjar  
           path: tmp/artifact
