@@ -64,13 +64,4 @@ jobs:
         - run: echo "🖥️ The workflow is now ready to test your code on the runner."
         #Si no hacemos checkout antes de la operación no accede correctamente al repositorio
         
-        - name: Descargar
-          uses: dawidd6/action-download-artifact@v2
-          id: download-artifact      
-          with:         
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              #workflow: maven.yml
-              #workflow_conclusion: success
-              name: bundle  
-              path: target
-        - run: echo "Descarga realizada"  
+       
