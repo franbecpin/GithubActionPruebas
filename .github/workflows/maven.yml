@@ -11,6 +11,7 @@ jobs:
         - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       
     jobs_1:    
+      needs: jobs_0 #Dependencia  
       name: Chequear repositorio
       runs-on: ubuntu-latest
       steps:
