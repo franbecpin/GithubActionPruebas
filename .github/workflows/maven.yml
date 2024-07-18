@@ -74,7 +74,7 @@ jobs:
               #workflow: maven.yml
               #workflow_conclusion: success
               name: bundle  
-              repository: /target
+              Local path: ${{ github.repository }}/target
               #path: target
         - run: echo "Descarga realizada"  
 
