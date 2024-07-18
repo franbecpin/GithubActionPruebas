@@ -44,5 +44,5 @@ jobs:
           name: bundle  
           path: target
       - run: echo "Artefacto creado"    
-      - name: Ver artifact   
-        run: ls -R /target
+      #- name: Ver artifact   
+       # run: ls -R /target
