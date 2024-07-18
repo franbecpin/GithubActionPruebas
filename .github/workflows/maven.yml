@@ -50,22 +50,34 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: bundle
-            path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
+            path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip           
+            #path: ${{ github.workspace }}/target/ #Path de los ficheros de recursos manualmente que serin incluidos en el zip
         - run: echo "Artefacto creado" 
      
-    jobs_3:
-      needs: [jobs_1, jobs_2] #Dependencia  
-      name: Descarga
-      runs-on: ubuntu-latest
-      if: | #Esperar que se genere el artefact
-          always() &&  (needs.jobs_2.result == 'success')
-      steps:
-        - name: Check out repository code
-          uses: actions/checkout@v4
-        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-        - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+    #jobs_3:
+     # needs: [jobs_1, jobs_2] #Dependencia  
+      #name: Descarga
+      #runs-on: ubuntu-latest
+      #if: | #Esperar que se genere el artefact
+       #   always() &&  (needs.jobs_2.result == 'success')
+      #steps:
+       # - name: Check out repository code
+        #  uses: actions/checkout@v4
+        #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        #- run: echo "🖥️ The workflow is now ready to test your code on the runner."
         #Si no hacemos checkout antes de la operación no accede correctamente al repositorio
-        
+        #- name: Descargar
+         # uses: dawidd6/action-download-artifact@v2
+          #id: download-artifact      
+          #with:         
+           #   github_token: ${{ secrets.GITHUB_TOKEN }}
+              #workflow: maven.yml
+              #workflow_conclusion: success
+            #  name: bundle  
+             # path: ${{ github.repository }}/targetArt
+              #path: target
+        #- run: echo "Descarga realizada"  
+                
        
 # Actions
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
