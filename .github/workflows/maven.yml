@@ -42,7 +42,7 @@ jobs:
           #workflow: maven.yml
           #workflow_conclusion: success
           name: bundle  
-          path: C:/TEMP
+          path: C:/Users/francisco.becerra/Desktop/DESARROLLO/PruebasGitHub/GithubActionPruebas/target
       - run: echo "Artefacto creado"    
       #- name: Ver artifact   
        # run: ls -R /target
