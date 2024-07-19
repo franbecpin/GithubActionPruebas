@@ -83,12 +83,15 @@ jobs:
        if: | #Esperar que termine el job indicado
            always() &&  (needs.jobs_2.result == 'success')
        steps:
+           - name: Check out repository code
+             uses: actions/checkout@v4
            - name: Download All Artifacts
              uses: actions/download-artifact@v4
              with:
-               path: target
+               name: bundle2
+               path: artifact
                #pattern: *.*
-           #- run: ls -R target		 
+           - run: ls -R artifact		 
    
     
     #jobs_3:
