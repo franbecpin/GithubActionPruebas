@@ -87,8 +87,8 @@ jobs:
              uses: actions/download-artifact@v4
              with:
                path: target
-               pattern: my-artifact-*
-           - run: ls -R target
+               #pattern: *.*
+           #- run: ls -R target
     
     #jobs_3:
      # needs: [jobs_1, jobs_2] #Dependencia  
