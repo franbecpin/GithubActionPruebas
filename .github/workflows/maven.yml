@@ -103,7 +103,11 @@ jobs:
        if: | #Esperar que termine el job indicado
            always() &&  (needs.jobs_2.result == 'success')
        steps:
-           - run: cat saludo.txt 	     
+          - name: Sleep for 30 seconds
+            uses: jakejarvis/wait-action@master
+            with:
+                time: '30s' # Esperar para asegurar el artifact
+          - run: cat saludo.txt 	     
        
 # Actions
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
