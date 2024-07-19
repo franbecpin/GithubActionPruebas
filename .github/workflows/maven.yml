@@ -107,7 +107,7 @@ jobs:
             uses: jakejarvis/wait-action@master
             with:
                 time: '30s' # Esperar para asegurar el artifact
-          - run: cat saludo.txt 	     
+          - run: cat saludo.txt  # Esto da error porque no se hizo un dowload de artefacto antes	     
        
 # Actions
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
