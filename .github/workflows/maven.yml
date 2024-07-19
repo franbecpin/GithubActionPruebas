@@ -92,10 +92,10 @@ jobs:
            - name: Download All Artifacts
              uses: actions/download-artifact@v4
              with:
-               name: bundle2
-               path: target
-               pattern: d* 
-           - run: ls -R artifact	  
+               name: my-artifact
+               path: .
+               #pattern: d* 
+           - run: cat saludo.txt	  
            
     #jobs_3:
      # needs: [jobs_1, jobs_2] #Dependencia  
