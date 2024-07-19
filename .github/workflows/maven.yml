@@ -58,8 +58,8 @@ jobs:
         - run: echo "🖥️ The workflow is now ready to test your code on the runner."
            # Creamos un fichero que creará su propio artefacto 
            # - name: Create a File
-        - run: echo "hello from Github Actions" > saludo.txt
-        - run: echo "hello from Github Actions" > readme.txt
+        - run: echo "hello from Github Actions" > myArtifact/saludo.txt
+        - run: echo "hello from Github Actions" > myArtifact/readme.txt
         - name: Upload Artifact
           uses: actions/upload-artifact@v4
           with:
