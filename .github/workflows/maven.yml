@@ -86,7 +86,7 @@ jobs:
            - name: Sleep for 30 seconds
              uses: jakejarvis/wait-action@master
              with:
-                 time: '30s'
+                 time: '30s' # Esperar para asegurar el artifact
            - name: Check out repository code
              uses: actions/checkout@v4
            - name: Download All Artifacts
@@ -95,32 +95,15 @@ jobs:
                name: my-artifact
                path: .
                #pattern: d* 
-           - run: cat saludo.txt	  
-           
-    #jobs_3:
-     # needs: [jobs_1, jobs_2] #Dependencia  
-      #name: Descarga
-      #runs-on: ubuntu-latest
-      #if: | #Esperar que termine el job indicado
-       #   always() &&  (needs.jobs_2.result == 'success')
-      #steps:
-       # - name: Check out repository code
-        #  uses: actions/checkout@v4
-        #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-        #- run: echo "🖥️ The workflow is now ready to test your code on the runner."
-        #Si no hacemos checkout antes de la operación no accede correctamente al repositorio
-        #- name: Descargar
-         # uses: dawidd6/action-download-artifact@v2
-          #id: download-artifact      
-          #with:         
-           #   github_token: ${{ secrets.GITHUB_TOKEN }}
-              #workflow: maven.yml
-              #workflow_conclusion: success
-            #  name: bundle  
-             # path: ${{ github.repository }}/targetArt
-              #path: target
-        #- run: echo "Descarga realizada"  
-                
+           - run: cat saludo.txt 	
+
+    jobs_4: 
+       needs: jobs_2
+       runs-on: ubuntu-latest
+       if: | #Esperar que termine el job indicado
+           always() &&  (needs.jobs_2.result == 'success')
+       steps:
+           - run: cat saludo.txt 	     
        
 # Actions
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
