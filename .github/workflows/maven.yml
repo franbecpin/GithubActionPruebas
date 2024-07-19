@@ -58,14 +58,12 @@ jobs:
         - run: echo "🖥️ The workflow is now ready to test your code on the runner."
            # Creamos un fichero que creará su propio artefacto 
            # - name: Create a File
-        - run: echo "hello from Github Actions" > myArtifact/saludo.txt
-        - run: echo "hello from Github Actions" > myArtifact/readme.txt
+        - run: echo "hello from Github Actions" > saludo.txt        
         - name: Upload Artifact
           uses: actions/upload-artifact@v4
           with:
-                name: my-artifact
-                path: myArtifact
-                #path: saludo.txt
+                name: my-artifact                
+                path: saludo.txt
         
         # Si no hacemos checkout antes de la operación no accede correctamente al repositorio
         # Creamos el artefacto con el fichero o contenido de la carpeta que indicamos en el path
