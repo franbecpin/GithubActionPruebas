@@ -78,10 +78,7 @@ jobs:
         - run: echo "Artefacto creado" 
         - name: Display structure of downloaded files
           run: ls -R target
-    
-   	 
-   
-    
+       
     #jobs_3:
      # needs: [jobs_1, jobs_2] #Dependencia  
       #name: Descarga
