@@ -76,8 +76,19 @@ jobs:
         - run: echo "Artefacto creado" 
         - name: Display structure of downloaded files
           run: ls -R target
-
     
+    jobs_3: 
+       needs: jobs_2
+       runs-on: ubuntu-latest
+       if: | #Esperar que termine el job indicado
+           always() &&  (needs.jobs_2.result == 'success')
+       steps:
+           - name: Download All Artifacts
+             uses: actions/download-artifact@v4
+             with:
+               path: target
+               #pattern: *.*
+           #- run: ls -R target		 
    
     
     #jobs_3:
