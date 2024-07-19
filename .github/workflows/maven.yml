@@ -79,21 +79,7 @@ jobs:
         - name: Display structure of downloaded files
           run: ls -R target
     
-    jobs_3: 
-       needs: jobs_2
-       runs-on: ubuntu-latest
-       if: | #Esperar que termine el job indicado
-           always() &&  (needs.jobs_2.result == 'success')
-       steps:
-           - name: Check out repository code
-             uses: actions/checkout@v4
-           - name: Download All Artifacts
-             uses: actions/download-artifact@v4
-             with:
-               name: my-artifact
-               path: artifact
-               #pattern: read*
-           - run: ls -R artifact		 
+   	 
    
     
     #jobs_3:
