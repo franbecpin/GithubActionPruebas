@@ -64,7 +64,8 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
                 name: my-artifact
-                path: saludo.txt
+                path: myArtifact
+                #path: saludo.txt
         
         # Si no hacemos checkout antes de la operación no accede correctamente al repositorio
         # Creamos el artefacto con el fichero o contenido de la carpeta que indicamos en el path
