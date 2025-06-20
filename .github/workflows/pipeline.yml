@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  tarea1:
+  Informacion:
     runs-on: 	windows-latest
     steps:
       - name: Fecha
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Repo-Actual  
         run: echo "🔎 Rama=> ${{ github.ref }} Repo=> is ${{ github.repository }}."
-  tarea2:
+  AsignarJDK:
     runs-on: 	windows-latest
     steps:
        - name: Control
