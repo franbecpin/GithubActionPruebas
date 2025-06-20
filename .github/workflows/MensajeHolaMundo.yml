@@ -1,0 +1,13 @@
+name: MensajeHolaMundo
+# Todos los push
+on: push 
+# Solo push en determinadas ramas
+# on:
+#  push: ["main","release/", "develop"]
+
+jobs:
+  tarea1:
+    runs-on: 	windows-latest
+    steps:
+      - name: Paso1
+        run: echo "[INF] Paso 1 de MensajeHolaMundo"
