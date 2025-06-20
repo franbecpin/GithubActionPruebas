@@ -19,5 +19,7 @@ jobs:
       - name: Tarea2-Paso1
         run: echo "[INF] Tarea2- > Paso 1"
       - name: Tarea2-Paso2   
-        run: echo "[INF] Tarea2- > Paso 1"
+        run: |
+          date
+          echo "[INF] Tarea2- > Paso 1"
   
