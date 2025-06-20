@@ -10,4 +10,6 @@ jobs:
     runs-on: 	windows-latest
     steps:
       - name: Paso1
-        run: echo [INF - %date% ] Paso 1 de MensajeHolaMundo
+        run: date
+      - name: Paso2   
+        run: echo "[INF] Paso 1 de MensajeHolaMundo"
