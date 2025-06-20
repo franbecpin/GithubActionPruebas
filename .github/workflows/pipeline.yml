@@ -9,5 +9,8 @@ jobs:
     runs-on: 	windows-latest
     steps:
       - name: Chequear
-      - uses: actions/checkout@v4
-      - run: javac App.java
+        uses: actions/checkout@v4
+      - name: Compilar Java  
+        run: |
+          echo "Compilando Aplicacion"
+          javac App.java
