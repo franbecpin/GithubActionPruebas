@@ -5,12 +5,13 @@ on:
       - main
 
 jobs:
-  Compilacion:
+  tarea1:
     runs-on: 	windows-latest
     steps:
-      - name: Chequear
+      - name: Fecha
+        run: date
+      - name: Control
         uses: actions/checkout@v4
-      - name: Compilar Java  
-        run: |
-          echo "Compilando Aplicacion"
-          mvn compile
+      - name: Repo-Actual  
+        run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
