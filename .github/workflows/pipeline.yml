@@ -1,0 +1,13 @@
+name: pipeline
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Compilacion:
+    runs-on: 	windows-latest
+    steps:
+      - name: Chequear
+      - uses: actions/checkout@v4
+      - run: javac App.java
