@@ -38,10 +38,10 @@ jobs:
 
   Compilar:
     runs-on: 	windows-latest
-      steps:
-       - name: Control
-         uses: actions/checkout@v4
-       - name: Compilar
-         run: mvn compile
+    steps:
+    - name: Control
+      uses: actions/checkout@v4
+    - name: Compilar
+      run: mvn compile
       
 
