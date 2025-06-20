@@ -38,7 +38,7 @@ jobs:
 
         # Con lo que acaba de crear Maven
         - name: Crear Artefact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
             name: bundle
             path: target #Path de los ficheros de recursos manualmente que serin incluidos en el zip           
