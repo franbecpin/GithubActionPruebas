@@ -17,12 +17,14 @@ jobs:
   tarea2:
     runs-on: 	windows-latest
     steps:
-      - name: Set up JDK 16
-        uses: actions/setup-java@v3
-        with:          
+       - name: Control
+         uses: actions/checkout@v4
+       - name: Set up JDK 16
+         uses: actions/setup-java@v3
+         with:          
             java-version: '16'
             distribution: 'temurin'
             cache: maven
-      - run: echo "JDK asignada"
+       - run: echo "JDK asignada"
       
 
