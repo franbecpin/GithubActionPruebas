@@ -27,5 +27,14 @@ jobs:
             distribution: 'temurin'
             cache: maven
        - run: echo "JDK asignada"
+    
+  ValidaPom:
+      runs-on: 	windows-latest
+      steps:
+       - name: Control
+         uses: actions/checkout@v4
+       - name: Validar
+         run: mvn validate
+   
       
 
