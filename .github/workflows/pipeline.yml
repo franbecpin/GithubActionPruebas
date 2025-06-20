@@ -13,4 +13,4 @@ jobs:
       - name: Compilar Java  
         run: |
           echo "Compilando Aplicacion"
-          javac App.java
+          mvn compile
