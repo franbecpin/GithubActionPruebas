@@ -9,7 +9,15 @@ jobs:
   tarea1:
     runs-on: 	windows-latest
     steps:
-      - name: Paso1
+      - name: Tarea1-Paso1
         run: date
-      - name: Paso2   
+      - name: Tarea1-Paso2   
         run: echo "[INF] Paso 1 de MensajeHolaMundo"
+  tarea2:
+    runs-on: 	windows-latest
+    steps:
+      - name: Tarea2-Paso1
+        run: echo "[INF] Tarea2- > Paso 1"
+      - name: Tarea2-Paso2   
+        run: echo "[INF] Tarea2- > Paso 1"
+  
